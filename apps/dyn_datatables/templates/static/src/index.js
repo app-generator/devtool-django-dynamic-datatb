@@ -47,7 +47,6 @@ dataTable.table.addEventListener('click', (e) => {
         const row = e.target.closest('tr');
         if (e.target.className.includes('remove')) {
             removeRow(dataTable,row.dataIndex)
-            location.reload()
         }
         else if (e.target.className.includes('edit')) {
             const rowContent = [].slice.call(dataTable.data[row.dataIndex].cells).map((cell) => { return cell.textContent; });

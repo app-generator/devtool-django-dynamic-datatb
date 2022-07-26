@@ -138,7 +138,8 @@ export const removeRow = (dataTable , item) => {
 
             setToastBody(result.message,'success')
             toast.show()
-        })
+            location.reload()
+     })
         .catch((err) => {
             setToastBody(JSON.parse(err.toString().replace('Error: ','')).detail,'fail')
             toast.show()
