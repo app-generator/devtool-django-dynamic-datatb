@@ -30,3 +30,5 @@ apps/static/assets/yarn.lock
 apps/static/assets/.temp
 
 .idea/
+apps/dyn_datatables/migrations/*.py
+!apps/dyn_datatables/migrations/__init__.py
