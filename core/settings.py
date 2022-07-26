@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'apps.dyn_datatables',
     'apps.home'  # Enable the inner home (home)
 ]
 
@@ -141,8 +143,19 @@ STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'apps/static'),
+    os.path.join(BASE_DIR, "apps/dyn_datatables/templates/static"),
 )
 
 
 #############################################################
 #############################################################
+
+
+DYNAMIC_DATATB = {
+    # pattern:
+    'endpoint': 'Model',
+
+    'people': "People",
+    'books': "Book",
+    'sales': "Sales",
+}
