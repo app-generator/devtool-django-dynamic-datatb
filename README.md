@@ -15,8 +15,7 @@ The tool aims to provide a powerful data table interface using the developer's m
 - ✅ Search, Filters
 - ✅ Exports in PDF, CSV formats
 - ✅ `MIT License` (commercial use allowed)
-- ✅ Active versioning  
-- ✅ Free [support](https://appseed.us/support/)  
+- ✅ Active versioning & Free [support](https://appseed.us/support/)  
 
 <br />
 
