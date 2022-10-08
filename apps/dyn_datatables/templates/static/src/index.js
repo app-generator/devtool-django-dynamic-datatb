@@ -17,8 +17,8 @@ let formType = formTypes.ADD
 // table
 const dataTable = new simpleDatatables.DataTable('table' , {
     data: myData,
-    perPageSelect: [5,25,50],
-    perPage: parseInt(new URLSearchParams(window.location.search).get('entries')) || 5,
+    perPageSelect: [10,25,50],
+    perPage: parseInt(new URLSearchParams(window.location.search).get('entries')) || 10,
     labels: {
         placeholder: "Search...",
         perPage: "{select} Items/Page",
