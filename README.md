@@ -27,7 +27,7 @@ $ docker-compose up --build
 
 Visit `http://localhost:5085` in your browser. By default a simple [Books](./apps/models.py) Model is used as sample.  
 
-- The Dynamic UI is live at `http://localhost:5085/datatb/books`
+The **Dynamic UI** is live at `http://localhost:5085/datatb/books`
 
 <br />
 
