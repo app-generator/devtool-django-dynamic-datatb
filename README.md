@@ -9,34 +9,75 @@ The presentation layer uses `Simple-DataTables` and Vanilla JS code to render th
 
 <br />
 
-## Video Presentation 
+## Quick start in `Docker`
 
-https://user-images.githubusercontent.com/51070104/194324059-e9c35df3-9467-438f-95e7-61cd16b8fae2.mp4
+> 👉 **Step 1** - Download the code from the GH repository (using `GIT`) 
+
+```bash
+$ git clone https://github.com/app-generator/devtool-django-dynamic-datatb.git
+$ cd devtool-django-dynamic-datatb
+```
+
+<br />
+
+> 👉 **Step 2** - Start the APP in `Docker`
+
+```bash
+$ docker-compose up --build 
+```
+
+Visit `http://localhost:5085` in your browser. By default a simple [Books](./apps/models.py) Model is used as sample.  
+
+- The Dynamic UI is live at `http://localhost:5085/datatb/books`
+
+<br />
+
+@ToDO -SSHot
+
+<br />
+
+## Video Presentation
+
+@ToDO -Video
 
 <br />
 
 ## How It Works
 
-The `Dynamic DataTables` tool aims to enable a powerful data table interface on top of any Django codebase with a minimum effort. Here are the steps:
+> 👉 **Step #1** - Define models in `apps/models.py`
 
-- `Define a new model` in the project (an old one can be also used)
-- `Execute the database migration` to create/update the associated tables
-- `Update the configuration` to enable the Dynamic Data Table service over the model
-- `Start` the app
-- Access the `Dynamic DataTable` provided on op of the model
+By default, the project comes with a simple `Books` model: 
 
-For instance, if the new model managed by the Dynamic DatTable Service is called `books`, the associate API is exposed at `/datatb/books/`
+```python
+class Book(models.Model):
+
+    name = models.CharField(max_length=100)
+```
 
 <br />
 
-| Status | Item | info | 
-| --- | --- | --- |
-| ✅ | New Models Definition in `apps/models` | - |
-| ✅ | The app is saved in `apps/dyn_datatables` | - |
-| ✅ | Models enabled in `core/settings.py` via `DYNAMIC_DATATB` variable | - |
-| ✅ | The project exposes automaticaly a view powered by `Simple-DataTables` JS Library | - |
-| ✅ | Path of the service: `/datatb/products/` | In case the new model is `Products` | - | 
-| ✅ | The page exposes the controls: `Items per page`, `Search`, `Server Side Pagination`  | - |
+> 👉 **Step #2** -  `Register the model` in `core/settings.py` (API_GENERATOR section)
+
+```python
+DYNAMIC_DATATB = {
+    'books': "Book", # <-- Books model provided as sample
+}
+```
+
+<br />
+
+> 👉 **Step #3** - `Migrate Database`
+
+```bash
+$ python manage.py makemigrations
+$ python manage.py migrate
+```
+
+<br />
+
+> 👉 **Step #4** - `Access the UI` 
+
+* Manager books via dynamic page `/datatb/books/`
 
 <br />
 

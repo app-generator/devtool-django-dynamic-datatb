@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps',      # this will trigger the migration 
     'rest_framework',
     'apps.dyn_datatables',
     'apps.home'  # Enable the inner home (home)
@@ -147,15 +148,12 @@ STATICFILES_DIRS = (
 )
 
 
-#############################################################
-#############################################################
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#############################################################
+#############################################################
 
 DYNAMIC_DATATB = {
-    # pattern:
-    'endpoint': 'Model',
-
-    'people': "People",
     'books': "Book",
     'sales': "Sales",
 }

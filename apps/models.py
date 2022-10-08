@@ -33,30 +33,17 @@ class Utils:
         # we are confident that never returns None
         return None
 
-
-# Create your models here.
-class People(models.Model):
-    # following two lines is required for all models in this file because models defines outside of app
-    # https://docs.djangoproject.com/en/4.0/ref/models/options/#app-label
-    class Meta:
-        app_label = 'dyn_datatables'
-
-    name = models.CharField(max_length=50)
-    age = models.IntegerField()
-
+'''
+Add your models below
+'''
 
 class Book(models.Model):
-    class Meta:
-        app_label = 'dyn_datatables'
 
-    title = models.CharField(max_length=100)
-    year = models.IntegerField(default=2020)
+    title        = models.CharField(max_length=100)
+    year         = models.IntegerField(default=2020)
     is_published = models.BooleanField()
 
-
 class Sales(models.Model):
-    class Meta:
-        app_label = 'dyn_datatables'
 
-    product = models.CharField(max_length=100)
+    product       = models.CharField(max_length=100)
     purchase_date = models.DateField(default=datetime.datetime.now())
