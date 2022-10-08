@@ -19,6 +19,11 @@ The tool aims to provide a powerful data table interface using the developer's m
 
 <br />
 
+
+![Django Dynamic DataTables - Open-Source tool provided by AppSeed.](https://user-images.githubusercontent.com/51070104/194712823-b8bf1a9e-f5d8-47b3-b7e6-a46a29f3acbe.gif)
+
+<br />
+
 ## Quick start in `Docker`
 
 > 👉 **Step 1** - Download the code from the GH repository (using `GIT`) 
