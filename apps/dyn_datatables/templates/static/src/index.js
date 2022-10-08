@@ -6,7 +6,9 @@ import {
     editRow,
     search,
     columnsManage,
-    exportController, addController
+    exportController, 
+    addController,
+    middleContainer,
 } from './controller/index.js'
 import { formConstructor, formTypes } from './form/index.js'
 
@@ -15,11 +17,11 @@ let formType = formTypes.ADD
 // table
 const dataTable = new simpleDatatables.DataTable('table' , {
     data: myData,
-    perPageSelect: [10,25,50],
-    perPage: parseInt(new URLSearchParams(window.location.search).get('entries')) || 10,
+    perPageSelect: [5,25,50],
+    perPage: parseInt(new URLSearchParams(window.location.search).get('entries')) || 5,
     labels: {
         placeholder: "Search...",
-        perPage: "{select} entries per page",
+        perPage: "{select} Items/Page",
         noRows: "No entries to found",
         info: "Showing {start} to {end} of {rows} entries",
     },
@@ -34,7 +36,7 @@ myData.data.forEach((d,i) => {
     
     const removeBtn = `<i class="btn-outline-danger remove bi bi-eraser"></i>`
 
-    newColumn.push(editBtn + " " + removeBtn)
+    newColumn.push(editBtn + " &nbsp; " + removeBtn)
 })
         // add buttons
 dataTable.columns().add({
@@ -54,8 +56,7 @@ dataTable.table.addEventListener('click', (e) => {
             formConstructor(formTypes.EDIT,rowContent)
         }
     }
-})
-
+}) 
 
 window.onload = () => {
     if (sessionStorage.getItem('register') == null)
@@ -79,25 +80,29 @@ window.onload = () => {
 // events
 events(dataTable)
 
-// search
-search()
+// To be coded
+//middleContainer(dataTable)
 
 // columns manage
 columnsManage(dataTable)
 
-// export
-exportController(dataTable)
-
 // add
 addController(formType)
 
+// export
+exportController(dataTable)
+
+// Search Box
+search()
+
 document.addEventListener('submit',(e) => {
+
     e.preventDefault();
 
     if (formType === formTypes.ADD)
-        addRow(dataTable,getFormData())
+        addRow(dataTable, getFormData())
     else if (formType === formTypes.EDIT)
-        editRow(dataTable,getFormData())
+        editRow(dataTable, getFormData())
 
     // console.log(getFormData());
 })
@@ -105,15 +110,16 @@ document.addEventListener('submit',(e) => {
 const getFormData = () => {
     const data = {}
     const myForm = document.querySelector('form')
+
     for (let i of myForm.elements) {
         if (i.type === 'text' || i.type === 'date')
             data[i.placeholder] = i.value;
     }
 
-    return data
+    return data;
 }
 
 // style
 // modelName
 document.querySelector('.model-name').innerHTML = modelName
-document.querySelector('.dataTable-top').className += ' d-flex  justify-content-between'
+document.querySelector('.dataTable-top').className += ' d-flex justify-content-between'
