@@ -155,5 +155,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DYNAMIC_DATATB = {
     'books': "Book",
-    'sales': "Sales",
 }

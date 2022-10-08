@@ -38,4 +38,5 @@ Add your models below
 '''
 
 class Book(models.Model):
-    title        = models.CharField(max_length=100)
+
+    title = models.CharField(max_length=100)
