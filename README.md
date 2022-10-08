@@ -1,6 +1,6 @@
 # [Django Dynamic DataTables](https://appseed.us/developer-tools/django-dynamic-datatables/)
 
-The tool aims to provide a powerful data table interface using the developer's minimum amount of code For newcomers, Django is a leading backend framework used to code from simple websites and API's to complex eCommerce solutions.
+The tool aims to provide a powerful data table interface using the developer's minimum amount of code.
 
 The presentation layer uses `Simple-DataTables` and `Vanilla JS` code to render the information.
 
