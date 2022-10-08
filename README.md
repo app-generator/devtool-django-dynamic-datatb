@@ -32,13 +32,13 @@ Visit `http://localhost:5085` in your browser. By default a simple [Books](./app
 
 <br />
 
-@ToDO -SSHot
+![Django Dynamic DataTables - Open-Source Tool for Developers.](https://user-images.githubusercontent.com/51070104/194706034-b691226d-f9fa-4c05-a828-fc947670c573.jpg)
 
 <br />
 
 ## Video Presentation
 
-@ToDO -Video
+https://user-images.githubusercontent.com/51070104/194706066-37a40b93-bc89-4d79-84b0-996dfb0f8be6.mp4
 
 <br />
 
@@ -51,7 +51,7 @@ By default, the project comes with a simple `Books` model:
 ```python
 class Book(models.Model):
 
-    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
 ```
 
 <br />
