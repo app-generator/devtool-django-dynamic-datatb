@@ -8,6 +8,18 @@ The tool aims to provide a powerful data table interface using the developer's m
 
 <br />
 
+> Features: 
+
+- ✅ Modern Stack: `Django` & `VanillaJS`
+- ✅ `Server-side` pagination
+- ✅ Search, Filters
+- ✅ Exports in PDF, CSV formats
+- ✅ `MIT License` (commercial use allowed)
+- ✅ Active versioning  
+- ✅ Free [support](https://appseed.us/support/)  
+
+<br />
+
 ## Quick start in `Docker`
 
 > 👉 **Step 1** - Download the code from the GH repository (using `GIT`) 
