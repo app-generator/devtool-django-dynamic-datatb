@@ -44,12 +44,25 @@ export const addController = (formType) => {
     })
 }
 
+function search_action() {
+
+    const searchValue = document.querySelector('#search').value
+
+    const searchParams = new URLSearchParams(window.location.search)
+    searchParams.set("search", searchValue);
+    searchParams.set("page", '1');
+    const newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+    window.history.pushState({},'',newRelativePathQuery)
+    location.reload()
+}
+
 // Search Box + Events
 export const search = () => {
 
     const searchContainer     = document.createElement('div')
     searchContainer.className = 'd-flex'
     searchContainer.id        = 'search-container'
+    
     const searchInput         = document.createElement('input')
     searchInput.className     = 'form-control mx-1'
     searchInput.setAttribute('placeholder', 'search...')
@@ -66,16 +79,16 @@ export const search = () => {
 
     document.querySelector('.dataTable-top').appendChild(searchContainer)
 
-    // search Action
-    document.querySelector('#search-btn').addEventListener('click',() => {
-        const searchValue = document.querySelector('#search').value
+    // Trigger Search on ENTER
+    document.querySelector('#search').addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            search_action();
+        }    
+    })
 
-        const searchParams = new URLSearchParams(window.location.search)
-        searchParams.set("search", searchValue);
-        searchParams.set("page", '1');
-        const newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
-        window.history.pushState({},'',newRelativePathQuery)
-        location.reload()
+    // Trigger Search on Button Click
+    document.querySelector('#search-btn').addEventListener('click',() => {
+        search_action();
     })
 }
 
