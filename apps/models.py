@@ -38,12 +38,4 @@ Add your models below
 '''
 
 class Book(models.Model):
-
     title        = models.CharField(max_length=100)
-    year         = models.IntegerField(default=2020)
-    is_published = models.BooleanField()
-
-class Sales(models.Model):
-
-    product       = models.CharField(max_length=100)
-    purchase_date = models.DateField(default=datetime.datetime.now())
