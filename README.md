@@ -1,8 +1,6 @@
 # [Django Dynamic DataTables](https://appseed.us/developer-tools/django-dynamic-datatables/)
 
-The tool aims to provide a powerful data table interface using the developer's minimum amount of code.
-
-The presentation layer uses `Simple-DataTables` and `Vanilla JS` code to render the information.
+The tool aims to provide a powerful data table interface using the developer's minimum amount of code. Built on top of [Simple-DataTables](https://github.com/fiduswriter/Simple-DataTables), `Vanilla JS` and **Django** for the backend logic.
 
 - 👉 [Django Dynamic DataTables](https://appseed.us/developer-tools/django-dynamic-datatables/) - product page
 - 👉 [Django Dynamic DataTables](https://www.youtube.com/watch?v=TrTI2jG2LCw) - video presentation
